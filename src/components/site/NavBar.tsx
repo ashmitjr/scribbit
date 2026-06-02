@@ -18,16 +18,10 @@ export function NavBar() {
         scrolled ? "backdrop-blur-md bg-background/85 border-b border-border/60" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="max-w-6xl mx-auto flex items-center px-4 sm:px-6 py-4">
         <a href="#" className="flex items-center gap-2">
           <span className="grid place-items-center w-7 h-7 rounded-md bg-foreground text-background font-serif text-sm">N</span>
-          <span className="font-medium text-foreground">Scribbit</span>
-        </a>
-        <a
-          href="#download"
-          className="inline-flex items-center rounded-full bg-foreground text-background text-[13px] font-medium px-5 py-2 hover:opacity-90 transition"
-        >
-          Download for Playform
+          <span className="font-medium text-foreground text-[15px]">Scribbit</span>
         </a>
       </div>
     </motion.header>
