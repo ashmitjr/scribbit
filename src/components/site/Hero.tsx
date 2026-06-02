@@ -80,8 +80,7 @@ export function Hero() {
 
           {/* Headline */}
           <h1
-            className="mt-3 sm:mt-4 font-serif text-foreground text-[36px] sm:text-[52px] md:text-[60px] leading-[1.03] tracking-[-0.03em]"
-            style={{ fontVariationSettings: '"opsz" 90' }}
+            className="mt-3 sm:mt-4 font-sans font-semibold text-foreground text-[36px] sm:text-[52px] md:text-[60px] leading-[1.03] tracking-[-0.03em]"
           >
             <Words words={line1} delay={0.28} />
             <br />
