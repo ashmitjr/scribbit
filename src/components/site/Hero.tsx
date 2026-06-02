@@ -24,13 +24,13 @@ export function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 0.6], ["0%", "-12%"]);
 
   return (
-    <section ref={sectionRef} className="pt-16 pb-6 px-3 sm:px-4">
-      <div className="grain relative max-w-4xl mx-auto bg-hero-card rounded-[24px] sm:rounded-[32px] overflow-hidden">
+    <section ref={sectionRef} className="pt-14 pb-6 px-3 sm:px-4 lg:px-6">
+      <div className="grain relative w-full max-w-7xl mx-auto bg-hero-card rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] overflow-hidden min-h-[480px] sm:min-h-[560px] lg:min-h-[680px]">
 
         {/* ── Mountain — parallax background ── */}
         <motion.div
           style={{ y: mountainY, scale: mountainScale }}
-          className="absolute inset-x-0 bottom-0 h-[64%] pointer-events-none origin-bottom"
+          className="absolute inset-x-0 bottom-0 h-[62%] pointer-events-none origin-bottom"
         >
           <img
             src={mountain}
@@ -38,7 +38,6 @@ export function Hero() {
             className="w-full h-full object-cover object-top"
             style={{ filter: "grayscale(100%) contrast(1.1) brightness(0.98)" }}
           />
-          {/* Top blend — mountain fades up into card bg */}
           <div
             className="absolute inset-x-0 top-0 h-[52%] pointer-events-none"
             style={{ background: "linear-gradient(to bottom, var(--hero-card) 0%, transparent 100%)" }}
@@ -47,11 +46,11 @@ export function Hero() {
 
         {/* ── Bottom vignette ── */}
         <div
-          className="absolute inset-x-0 bottom-0 h-[22%] pointer-events-none z-10"
+          className="absolute inset-x-0 bottom-0 h-[20%] pointer-events-none z-10"
           style={{ background: "linear-gradient(to top, var(--hero-card) 0%, transparent 100%)" }}
         />
 
-        {/* ── Subtle radial glow behind headline ── */}
+        {/* ── Radial glow behind headline ── */}
         <div
           className="absolute inset-x-0 top-0 h-[55%] pointer-events-none z-[5]"
           style={{ background: "radial-gradient(ellipse 80% 60% at 50% 20%, oklch(0.96 0.003 85 / 0.55) 0%, transparent 70%)" }}
@@ -60,7 +59,7 @@ export function Hero() {
         {/* ── Content ── */}
         <motion.div
           style={{ opacity: contentOpacity, y: contentY }}
-          className="relative z-20 text-center px-4 sm:px-8 pt-10 sm:pt-14 pb-[54%] sm:pb-[46%] md:pb-[40%]"
+          className="relative z-20 text-center px-4 sm:px-10 lg:px-20 pt-10 sm:pt-14 lg:pt-20 pb-[50%] sm:pb-[44%] md:pb-[40%] lg:pb-[34%]"
         >
           {/* Badge */}
           <motion.div
@@ -79,9 +78,7 @@ export function Hero() {
           </motion.div>
 
           {/* Headline */}
-          <h1
-            className="mt-3 sm:mt-4 font-sans font-semibold text-foreground text-[36px] sm:text-[52px] md:text-[60px] leading-[1.03] tracking-[-0.03em]"
-          >
+          <h1 className="mt-3 sm:mt-4 font-sans font-semibold text-foreground text-[36px] sm:text-[54px] md:text-[62px] lg:text-[72px] leading-[1.02] tracking-[-0.03em]">
             <Words words={line1} delay={0.28} />
             <br />
             <Words words={line2} delay={0.28 + line1.length * 0.055} />
@@ -92,10 +89,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.5, ease: "easeOut" }}
-            className="mt-3 mx-auto max-w-[260px] sm:max-w-[320px] text-[13px] sm:text-[14px] leading-[1.7] text-muted-foreground"
+            className="mt-3 mx-auto max-w-[260px] sm:max-w-[340px] lg:max-w-[400px] text-[13px] sm:text-[14px] lg:text-[15px] leading-[1.7] text-muted-foreground"
           >
             Combine note-taking, idea tracking, and daily planning in
-            one smart notebook — ready whenever inspiration hits.
+            one smart notebook ready whenever inspiration hits.
           </motion.p>
 
           {/* Toolbar */}
@@ -120,7 +117,7 @@ export function Hero() {
               whileHover={{ scale: 1.04, boxShadow: "0 4px 18px rgba(0,0,0,0.22)" }}
               whileTap={{ scale: 0.97 }}
               href="#download"
-              className="rounded-full bg-foreground text-background text-[13px] sm:text-[14px] font-medium px-5 py-2.5 shadow-[0_1px_4px_rgba(0,0,0,0.22)] transition-shadow"
+              className="rounded-full bg-foreground text-background text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 shadow-[0_1px_4px_rgba(0,0,0,0.22)] transition-shadow"
             >
               Download for Playstore
             </motion.a>
@@ -129,7 +126,7 @@ export function Hero() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               href="#trial"
-              className="rounded-full border border-[#C4C3BD]/80 bg-white/40 backdrop-blur-sm text-foreground text-[13px] sm:text-[14px] font-medium px-5 py-2.5 hover:bg-white/65 transition-colors"
+              className="rounded-full border border-[#C4C3BD]/80 bg-white/40 backdrop-blur-sm text-foreground text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 hover:bg-white/65 transition-colors"
             >
               Start Free Trial →
             </motion.a>

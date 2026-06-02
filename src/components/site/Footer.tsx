@@ -12,8 +12,8 @@ export function Footer() {
       <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
         <div className="col-span-2 sm:col-span-2 md:col-span-1">
           <div className="flex items-center gap-2">
-            <span className="grid place-items-center w-7 h-7 rounded-md bg-foreground text-background font-serif text-sm">N</span>
-            <span className="font-medium">Scribbit</span>
+            <span className="grid place-items-center w-7 h-7 rounded-md bg-foreground text-background font-sans font-semibold text-sm">N</span>
+            <span className="font-semibold tracking-[-0.01em]">Notely</span>
           </div>
           <p className="mt-4 text-[14px] text-muted-foreground max-w-xs leading-relaxed">
             Your simple space to capture ideas, stay organised, and never lose a thought.
@@ -36,7 +36,7 @@ export function Footer() {
       </div>
 
       <div className="max-w-5xl mx-auto mt-10 sm:mt-14 pt-6 border-t border-border flex flex-wrap items-center justify-between gap-4">
-        <p className="text-[12px] sm:text-[13px] text-muted-foreground">© 2025 Loopout. All rights reserved.</p>
+        <p className="text-[12px] sm:text-[13px] text-muted-foreground">© 2026 Ashmit. All rights reserved.</p>
         <div className="flex items-center gap-3 text-muted-foreground">
           <a href="#" aria-label="LinkedIn" className="hover:text-foreground"><Linkedin size={16} /></a>
           <a href="#" aria-label="Twitter" className="hover:text-foreground"><Twitter size={16} /></a>

@@ -18,10 +18,10 @@ export function NavBar() {
         scrolled ? "backdrop-blur-md bg-background/85 border-b border-border/60" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto flex items-center px-4 sm:px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center px-4 sm:px-6 lg:px-8 py-4">
         <a href="#" className="flex items-center gap-2">
-          <span className="grid place-items-center w-7 h-7 rounded-md bg-foreground text-background font-serif text-sm">N</span>
-          <span className="font-medium text-foreground text-[15px]">Scribbit</span>
+          <span className="grid place-items-center w-7 h-7 rounded-md bg-foreground text-background font-sans font-semibold text-sm">N</span>
+          <span className="font-semibold text-foreground text-[15px] tracking-[-0.01em]">Notely</span>
         </a>
       </div>
     </motion.header>
