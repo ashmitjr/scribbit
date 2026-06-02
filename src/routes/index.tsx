@@ -6,18 +6,19 @@ import { FeatureThink } from "@/components/site/FeatureThink";
 import { PlatformCards } from "@/components/site/PlatformCards";
 import { Pricing } from "@/components/site/Pricing";
 import { FeaturesOrganize } from "@/components/site/FeaturesOrganize";
+import { FAQ } from "@/components/site/FAQ";
 import { CTABanner } from "@/components/site/CTABanner";
 import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Scribbit — Ideas. Notes. Clarity." },
+      { title: "Notely — Ideas. Notes. Clarity." },
       {
         name: "description",
-        content: "One smart notebook for note-taking, idea tracking, and daily planning — ready whenever inspiration hits.",
+        content: "One smart notebook for note-taking, idea tracking, and daily planning. Free forever.",
       },
-      { property: "og:title", content: "Scribbit — Ideas. Notes. Clarity." },
+      { property: "og:title", content: "Notely — Ideas. Notes. Clarity." },
       { property: "og:description", content: "One smart notebook for note-taking, idea tracking, and daily planning." },
     ],
   }),
@@ -26,7 +27,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background overflow-x-hidden">
       <NavBar />
       <Hero />
       <TrustBar />
@@ -34,6 +35,7 @@ function Index() {
       <PlatformCards />
       <Pricing />
       <FeaturesOrganize />
+      <FAQ />
       <CTABanner />
       <Footer />
     </main>

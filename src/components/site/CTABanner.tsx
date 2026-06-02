@@ -1,11 +1,11 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Zap, Brain, Search } from "lucide-react";
+import { NoteLogo } from "./NoteLogo";
 
-const chips = [
-  { icon: Zap,    label: "Instant capture" },
-  { icon: Brain,  label: "Smart organize" },
-  { icon: Search, label: "Find anything" },
+const stats = [
+  { value: "100K+", label: "active users" },
+  { value: "4.8",   label: "App Store rating" },
+  { value: "Free",  label: "to get started" },
 ];
 
 export function CTABanner() {
@@ -23,7 +23,7 @@ export function CTABanner() {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-6 py-12 sm:py-16">
+    <section className="px-4 sm:px-6 lg:px-6 py-12 sm:py-16" id="download">
       <motion.div
         ref={ref}
         onMouseMove={onMove}
@@ -31,128 +31,139 @@ export function CTABanner() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative max-w-7xl mx-auto rounded-2xl sm:rounded-3xl lg:rounded-[40px] overflow-hidden bg-foreground text-background"
+        className="relative max-w-7xl mx-auto rounded-2xl sm:rounded-3xl lg:rounded-[40px] overflow-hidden bg-foreground"
       >
-        {/* Moving spotlight */}
+        {/* Cursor spotlight */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-0"
-          style={{
-            background: `radial-gradient(600px circle at ${gx} ${gy}, oklch(1 0 0 / 0.04), transparent 55%)`,
-          }}
+          style={{ background: `radial-gradient(500px circle at ${gx} ${gy}, oklch(1 0 0 / 0.05), transparent 60%)` }}
         />
 
-        {/* Decorative grid lines */}
+        {/* Subtle dot grid */}
         <div
-          className="pointer-events-none absolute inset-0 z-0 opacity-[0.04]"
+          className="pointer-events-none absolute inset-0 z-0"
           style={{
-            backgroundImage: "linear-gradient(oklch(1 0 0) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
+            backgroundImage: "radial-gradient(circle, oklch(1 0 0 / 0.12) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%)",
           }}
         />
 
-        {/* Glow blobs */}
-        <div className="pointer-events-none absolute -left-20 -bottom-16 w-64 h-64 rounded-full bg-white/5 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 -top-12 w-48 h-48 rounded-full bg-white/5 blur-3xl" />
+        <div className="relative z-10 px-8 sm:px-14 lg:px-20 py-14 sm:py-20">
+          <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12 lg:gap-20">
 
-        <div className="relative z-10 px-8 sm:px-14 lg:px-20 py-14 sm:py-20 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 text-center lg:text-left">
+            {/* Left: headline + sub */}
+            <div className="max-w-2xl">
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08, duration: 0.45 }}
+                className="flex items-center gap-2 mb-5"
+              >
+                <NoteLogo size={22} />
+                <span className="text-[12px] font-medium text-white/50 tracking-wide">Notely</span>
+              </motion.div>
 
-          {/* Left: copy */}
-          <div className="max-w-xl">
-            <motion.span
-              initial={{ opacity: 0, y: -8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-block rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[11px] sm:text-[12px] font-medium text-white/60 tracking-wide uppercase"
-            >
-              Notely for thinkers
-            </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.14, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                className="font-sans font-semibold text-[34px] sm:text-[46px] lg:text-[56px] leading-[1.02] tracking-[-0.03em] text-white"
+              >
+                Write now.
+                <br />
+                <span className="text-white/40">Find it later.</span>
+              </motion.h2>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.18, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-4 font-sans font-semibold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1.02] tracking-[-0.03em] text-white"
-            >
-              Still losing your
-              <br />
-              <span className="text-white/50">best thoughts?</span>
-            </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.24, duration: 0.5 }}
+                className="mt-5 text-[14px] sm:text-[15px] text-white/50 leading-relaxed max-w-lg"
+              >
+                Most note apps become digital junk drawers. Notely is the one you keep coming back to — 
+                because it works with how your brain already thinks, not against it.
+              </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.28, duration: 0.5 }}
-              className="mt-4 text-[14px] sm:text-[15px] text-white/55 leading-relaxed max-w-md lg:max-w-none mx-auto lg:mx-0"
-            >
-              Thousands of ideas live and die in your head every day.
-              Notely catches every one before it disappears.
-            </motion.p>
+              {/* Stats row */}
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={{ show: { transition: { staggerChildren: 0.08, delayChildren: 0.32 } } }}
+                className="mt-8 flex flex-wrap gap-8"
+              >
+                {stats.map(({ value, label }) => (
+                  <motion.div
+                    key={label}
+                    variants={{
+                      hidden: { opacity: 0, y: 10 },
+                      show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.45 } },
+                    }}
+                  >
+                    <p className="font-semibold text-[22px] sm:text-[26px] text-white tracking-[-0.03em] leading-none">{value}</p>
+                    <p className="mt-1 text-[12px] text-white/40 font-medium">{label}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
 
-            {/* Feature chips */}
+            {/* Right: CTA card */}
             <motion.div
-              initial="hidden"
-              whileInView="show"
+              initial={{ opacity: 0, x: 24, scale: 0.96 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
-              variants={{ show: { transition: { staggerChildren: 0.08, delayChildren: 0.38 } } }}
-              className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-2"
+              transition={{ delay: 0.2, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full lg:w-auto shrink-0"
             >
-              {chips.map(({ icon: Icon, label }) => (
-                <motion.div
-                  key={label}
-                  variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.45 } } }}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/7 px-3 py-1.5 text-[12px] font-medium text-white/70"
-                >
-                  <Icon size={12} className="text-white/50" />
-                  {label}
-                </motion.div>
-              ))}
+              <div className="w-full lg:w-[280px] rounded-2xl sm:rounded-3xl border border-white/10 bg-white/6 backdrop-blur-sm p-6 sm:p-7 flex flex-col gap-4">
+                <p className="font-semibold text-[15px] text-white tracking-[-0.01em] leading-snug">
+                  Get Notely on your device
+                </p>
+                <p className="text-[13px] text-white/45 leading-relaxed -mt-1">
+                  Pick a platform and you're up in under two minutes.
+                </p>
+
+                <div className="flex flex-col gap-2.5 mt-1">
+                  <motion.a
+                    href="#ios"
+                    whileHover={{ scale: 1.03, boxShadow: "0 0 24px rgba(255,255,255,0.18)" }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex items-center justify-between rounded-xl bg-white text-foreground text-[13px] font-semibold px-4 py-3 transition-shadow"
+                  >
+                    <span>App Store</span>
+                    <span className="text-foreground/40 text-[11px] font-normal">iOS / macOS</span>
+                  </motion.a>
+                  <motion.a
+                    href="#android"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex items-center justify-between rounded-xl border border-white/12 bg-white/6 text-white text-[13px] font-medium px-4 py-3 hover:bg-white/10 transition-colors"
+                  >
+                    <span>Play Store</span>
+                    <span className="text-white/35 text-[11px] font-normal">Android</span>
+                  </motion.a>
+                  <motion.a
+                    href="#web"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex items-center justify-between rounded-xl border border-white/12 bg-white/6 text-white text-[13px] font-medium px-4 py-3 hover:bg-white/10 transition-colors"
+                  >
+                    <span>Use in browser</span>
+                    <span className="text-white/35 text-[11px] font-normal">Any device</span>
+                  </motion.a>
+                </div>
+
+                <p className="text-[11px] text-white/25 text-center pt-1">
+                  No account needed to try it out
+                </p>
+              </div>
             </motion.div>
+
           </div>
-
-          {/* Right: CTA card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.25, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="shrink-0 w-full max-w-[300px] sm:max-w-[320px] rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 sm:p-8 flex flex-col items-center gap-5"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-white grid place-items-center shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
-              <span className="font-sans font-bold text-foreground text-[18px]">N</span>
-            </div>
-
-            <div className="text-center">
-              <p className="font-semibold text-[16px] text-white tracking-[-0.01em]">Start free today</p>
-              <p className="mt-1 text-[13px] text-white/50">No card required</p>
-            </div>
-
-            <motion.a
-              href="#download"
-              whileHover={{ scale: 1.04, boxShadow: "0 0 28px rgba(255,255,255,0.25)" }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full rounded-full bg-white text-foreground text-[14px] font-semibold py-3 text-center tracking-[-0.01em] transition-shadow"
-            >
-              Download Notely →
-            </motion.a>
-
-            <motion.a
-              href="#trial"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full rounded-full border border-white/15 text-white/70 text-[13px] font-medium py-2.5 text-center hover:bg-white/5 transition-colors"
-            >
-              Try in browser
-            </motion.a>
-
-            <p className="text-[11px] text-white/30 text-center leading-relaxed">
-              Works on iOS, Android, Web and Desktop.
-              <br />Free plan, always.
-            </p>
-          </motion.div>
-
         </div>
       </motion.div>
     </section>
