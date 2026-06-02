@@ -1,29 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NavBar } from "@/components/site/NavBar";
+import { Hero } from "@/components/site/Hero";
+import { TrustBar } from "@/components/site/TrustBar";
+import { FeatureThink } from "@/components/site/FeatureThink";
+import { PlatformCards } from "@/components/site/PlatformCards";
+import { Pricing } from "@/components/site/Pricing";
+import { FeaturesOrganize } from "@/components/site/FeaturesOrganize";
+import { CTABanner } from "@/components/site/CTABanner";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Scribbit — Ideas. Notes. Clarity." },
+      {
+        name: "description",
+        content: "One smart notebook for note-taking, idea tracking, and daily planning — ready whenever inspiration hits.",
+      },
+      { property: "og:title", content: "Scribbit — Ideas. Notes. Clarity." },
+      { property: "og:description", content: "One smart notebook for note-taking, idea tracking, and daily planning." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="min-h-screen bg-background">
+      <NavBar />
+      <Hero />
+      <TrustBar />
+      <FeatureThink />
+      <PlatformCards />
+      <Pricing />
+      <FeaturesOrganize />
+      <CTABanner />
+      <Footer />
+    </main>
   );
 }
