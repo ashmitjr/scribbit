@@ -12,20 +12,20 @@ export function EditorMockup() {
       </div>
       <div className="p-6 space-y-3 text-[13px] leading-relaxed text-muted-foreground">
         <p>
-          Haurem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
-          est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin
-          lacus.
+          Daily Standup Notes: shipped the onboarding checklist, reviewed the sync edge cases, and
+          queued follow-up tasks for the mobile polish pass.
         </p>
         <p>
-          Haurem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis{" "}
+          Project Brainstorming: group capture around three themes: faster note entry, clearer
+          notebook structure, and{" "}
           <span className="bg-yellow-200/60 text-foreground rounded px-1">
-            Curabitur ut bibendum lorem
+            one-tap search from anywhere
           </span>
-          . Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+          .
         </p>
         <p>
-          Haurem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis quam ipsum. Praesent
-          auctor purus quis tellus scelerisque, ac scelerisque erat venenatis. Mauris condimentum.
+          Meeting Minutes: confirm launch timeline by Friday, assign import testing to Maya, and
+          share the revised pricing copy with the team before review.
         </p>
       </div>
       <div className="flex items-center justify-between px-4 py-3 border-t border-border">

@@ -48,8 +48,8 @@ export function Pricing() {
           Choose your pricing plan
         </h2>
         <p className="mt-4 text-[14px] sm:text-[15px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          Keep your notes organized, clear, and easy to find. With Scribbit, every thought flows
-          into a system that adapts to your style, helping you stay focused and productive.
+          Keep your notes organized, clear, and easy to find. With Notely, every thought flows into
+          a system that adapts to your style, helping you stay focused and productive.
         </p>
       </div>
 

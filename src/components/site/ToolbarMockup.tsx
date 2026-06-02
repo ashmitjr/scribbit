@@ -3,7 +3,7 @@ import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight, Circle } f
 export function ToolbarMockup({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`inline-flex items-center gap-1 rounded-full bg-card border border-border shadow-soft px-2 py-1.5 ${className}`}
+      className={`inline-flex items-center gap-1 rounded-full bg-card border border-border shadow-soft px-2 pt-1.5 pb-2 sm:pb-1.5 ${className}`}
     >
       <button className="text-xs px-3 py-1 rounded-full text-muted-foreground hover:bg-muted">
         Style 01

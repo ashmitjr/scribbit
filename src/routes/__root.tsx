@@ -62,24 +62,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Scribbit" },
+      { title: "Notely" },
       {
         name: "description",
-        content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas.",
+        content: "Notely is a note-taking app for capturing, organizing, and remembering ideas.",
       },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Scribbit" },
+      { property: "og:title", content: "Notely" },
       {
         property: "og:description",
-        content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas.",
+        content: "Notely is a note-taking app for capturing, organizing, and remembering ideas.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Scribbit" },
+      { name: "twitter:title", content: "Notely" },
       {
         name: "twitter:description",
-        content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas.",
+        content: "Notely is a note-taking app for capturing, organizing, and remembering ideas.",
       },
       {
         property: "og:image",

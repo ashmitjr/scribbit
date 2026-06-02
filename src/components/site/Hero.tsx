@@ -26,25 +26,6 @@ export function Hero() {
   return (
     <section ref={sectionRef} className="pt-14 pb-6 px-3 sm:px-4 lg:px-6">
       <div className="grain relative w-full max-w-7xl mx-auto bg-hero-card rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] overflow-hidden min-h-[480px] sm:min-h-[560px] lg:min-h-[680px]">
-        {/* ── Mountain — parallax background ── */}
-        <motion.div
-          style={{ y: mountainY, scale: mountainScale }}
-          className="absolute inset-x-0 bottom-0 h-[62%] pointer-events-none origin-bottom"
-        >
-          <img
-            src={mountain}
-            alt="Mountain landscape"
-            className="w-full h-full object-cover object-top"
-            style={{ filter: "grayscale(100%) contrast(1.1) brightness(0.98)" }}
-          />
-          <div
-            className="absolute inset-x-0 top-0 h-[52%] pointer-events-none"
-            style={{
-              background: "linear-gradient(to bottom, var(--hero-card) 0%, transparent 100%)",
-            }}
-          />
-        </motion.div>
-
         {/* ── Bottom vignette ── */}
         <div
           className="absolute inset-x-0 bottom-0 h-[20%] pointer-events-none z-10"
@@ -63,7 +44,7 @@ export function Hero() {
         {/* ── Content ── */}
         <motion.div
           style={{ opacity: contentOpacity, y: contentY }}
-          className="relative z-20 text-center px-4 sm:px-10 lg:px-20 pt-10 sm:pt-14 lg:pt-20 pb-[50%] sm:pb-[44%] md:pb-[40%] lg:pb-[34%]"
+          className="relative z-20 text-center px-4 sm:px-10 lg:px-20 pt-10 sm:pt-14 lg:pt-20 pb-4 sm:pb-[44%] md:pb-[40%] lg:pb-[34%]"
         >
           {/* Badge */}
           <motion.div
@@ -114,7 +95,7 @@ export function Hero() {
             initial="hidden"
             animate="show"
             variants={{ show: { transition: { staggerChildren: 0.1, delayChildren: 1.12 } } }}
-            className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3"
+            className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3"
           >
             <motion.a
               variants={{
@@ -124,7 +105,7 @@ export function Hero() {
               whileHover={{ scale: 1.04, boxShadow: "0 4px 18px rgba(0,0,0,0.22)" }}
               whileTap={{ scale: 0.97 }}
               href="#download"
-              className="rounded-full bg-foreground text-background text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 shadow-[0_1px_4px_rgba(0,0,0,0.22)] transition-shadow"
+              className="w-full max-w-[230px] sm:w-auto sm:max-w-none rounded-full bg-foreground text-background text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 shadow-[0_1px_4px_rgba(0,0,0,0.22)] transition-shadow"
             >
               Download for Playstore
             </motion.a>
@@ -136,11 +117,30 @@ export function Hero() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               href="#trial"
-              className="rounded-full border border-[#C4C3BD]/80 bg-white/40 backdrop-blur-sm text-foreground text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 hover:bg-white/65 transition-colors"
+              className="w-full max-w-[230px] sm:w-auto sm:max-w-none rounded-full border border-[#C4C3BD]/80 bg-white/40 backdrop-blur-sm text-foreground text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 hover:bg-white/65 transition-colors"
             >
               Start Free Trial →
             </motion.a>
           </motion.div>
+        </motion.div>
+
+        {/* ── Mountain — parallax background ── */}
+        <motion.div
+          style={{ y: mountainY, scale: mountainScale }}
+          className="relative sm:absolute inset-x-0 sm:bottom-0 h-[220px] sm:h-[62%] mt-3 sm:mt-0 pointer-events-none origin-bottom"
+        >
+          <img
+            src={mountain}
+            alt="Mountain landscape"
+            className="w-full h-full object-cover object-top"
+            style={{ filter: "grayscale(100%) contrast(1.1) brightness(0.98)" }}
+          />
+          <div
+            className="absolute inset-x-0 top-0 h-[52%] pointer-events-none"
+            style={{
+              background: "linear-gradient(to bottom, var(--hero-card) 0%, transparent 100%)",
+            }}
+          />
         </motion.div>
       </div>
     </section>
