@@ -2,12 +2,12 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: 6px;
@@ -40,7 +40,6 @@
 }
 
 :root {
-  /* Warm off-white #F2F2F0 */
   --background: oklch(0.955 0.003 85);
   --foreground: oklch(0.18 0.003 60);
   --card: oklch(1 0 0);
@@ -63,25 +62,47 @@
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
+  * { border-color: var(--color-border); }
+
+  html {
+    overflow-x: hidden;
   }
+
   html, body {
+    overflow-x: hidden;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
     font-weight: 400;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 72;
   }
 }
 
 @layer utilities {
   .font-serif { font-family: var(--font-serif); }
-  .font-sans { font-family: var(--font-sans); }
-  .shadow-soft { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); }
+  .font-sans  { font-family: var(--font-sans);  }
+  .shadow-soft { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
   .shadow-card { box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05); }
+
+  /* Premium grain texture — sprinkle on hero cards */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 25;
+    border-radius: inherit;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 180px 180px;
+    opacity: 0.028;
+    mix-blend-mode: multiply;
+  }
 }
