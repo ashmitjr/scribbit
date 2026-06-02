@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Scribbit" },
+      { name: "description", content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Scribbit" },
+      { property: "og:description", content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Scribbit" },
+      { name: "twitter:description", content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/C6el9hY0ybS5TH5stiP53NRHCCl2/social-images/social-1780381207572-7332.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/C6el9hY0ybS5TH5stiP53NRHCCl2/social-images/social-1780381207572-7332.webp" },
     ],
     links: [
       {
