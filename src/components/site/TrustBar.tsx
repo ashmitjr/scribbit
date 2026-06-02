@@ -1,26 +1,31 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Circle, X } from "lucide-react";
 
-const items = ["$0 Fee", "100% Legal Compliance", "80%+ Reduced Abuse", "Cancel"];
+const items = [
+  { label: "$0 Fee", icon: null },
+  { label: "100% Legal Compliance", icon: Circle },
+  { label: "80%+ Reduced Abuse", icon: Circle },
+  { label: "Cancel", icon: X },
+];
 
 export function TrustBar() {
   return (
-    <div className="bg-trust border-y border-border/60">
-      <div className="max-w-5xl mx-auto px-6 py-3 flex flex-wrap items-center justify-center gap-x-10 gap-y-2">
-        {items.map((label, i) => (
+    <section className="px-4 py-5 overflow-hidden">
+      <div className="flex items-center gap-6 overflow-x-auto scrollbar-hide whitespace-nowrap">
+        {items.map((it, i) => (
           <motion.div
-            key={label}
+            key={it.label}
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.05, duration: 0.4 }}
-            className="flex items-center gap-2 text-[13px] text-muted-foreground"
+            className="flex items-center gap-1.5 text-[13px] text-[#9E9E99] shrink-0"
           >
-            <Check size={14} className="text-foreground/70" />
-            {label}
+            {it.icon ? <it.icon size={12} strokeWidth={1.5} /> : null}
+            {it.label}
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
