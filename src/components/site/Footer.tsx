@@ -8,9 +8,9 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="px-6 pt-20 pb-8">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-1">
+    <footer className="px-4 sm:px-6 pt-16 sm:pt-20 pb-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+        <div className="col-span-2 sm:col-span-2 md:col-span-1">
           <div className="flex items-center gap-2">
             <span className="grid place-items-center w-7 h-7 rounded-md bg-foreground text-background font-serif text-sm">N</span>
             <span className="font-medium">Scribbit</span>
@@ -21,11 +21,11 @@ export function Footer() {
         </div>
         {cols.map((c) => (
           <div key={c.title}>
-            <h4 className="font-sans text-[14px] font-semibold text-foreground">{c.title}</h4>
-            <ul className="mt-4 space-y-2">
+            <h4 className="font-sans text-[13px] sm:text-[14px] font-semibold text-foreground">{c.title}</h4>
+            <ul className="mt-3 sm:mt-4 space-y-2">
               {c.links.map((l) => (
                 <li key={l}>
-                  <a href="#" className="text-[14px] text-muted-foreground hover:text-foreground hover:underline">
+                  <a href="#" className="text-[13px] sm:text-[14px] text-muted-foreground hover:text-foreground hover:underline">
                     {l}
                   </a>
                 </li>
@@ -35,8 +35,8 @@ export function Footer() {
         ))}
       </div>
 
-      <div className="max-w-5xl mx-auto mt-14 pt-6 border-t border-border flex items-center justify-between">
-        <p className="text-[13px] text-muted-foreground">© 2025 Loopout. All rights reserved.</p>
+      <div className="max-w-5xl mx-auto mt-10 sm:mt-14 pt-6 border-t border-border flex flex-wrap items-center justify-between gap-4">
+        <p className="text-[12px] sm:text-[13px] text-muted-foreground">© 2025 Loopout. All rights reserved.</p>
         <div className="flex items-center gap-3 text-muted-foreground">
           <a href="#" aria-label="LinkedIn" className="hover:text-foreground"><Linkedin size={16} /></a>
           <a href="#" aria-label="Twitter" className="hover:text-foreground"><Twitter size={16} /></a>

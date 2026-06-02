@@ -13,7 +13,7 @@ export function CTABanner() {
   };
 
   return (
-    <section className="px-6 py-16">
+    <section className="px-4 sm:px-6 py-12 sm:py-16">
       <motion.div
         ref={ref}
         onMouseMove={onMove}
@@ -21,23 +21,23 @@ export function CTABanner() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative max-w-5xl mx-auto rounded-3xl bg-foreground text-background overflow-hidden p-10 md:p-14 grid md:grid-cols-2 gap-8 items-center"
+        className="relative max-w-5xl mx-auto rounded-2xl sm:rounded-3xl bg-foreground text-background overflow-hidden p-8 sm:p-10 md:p-14 grid md:grid-cols-2 gap-6 sm:gap-8 items-center"
         style={{
           backgroundImage:
             "radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.08), transparent 60%)",
         }}
       >
         <div>
-          <h2 className="font-serif text-[36px] leading-tight text-background">How You Take Notes?</h2>
-          <p className="mt-3 text-[15px] text-background/70 max-w-md">
+          <h2 className="font-serif text-[28px] sm:text-[36px] leading-tight text-background">How You Take Notes?</h2>
+          <p className="mt-3 text-[14px] sm:text-[15px] text-background/70 max-w-md">
             Start Using Notely To Capture Your Thoughts Instantly And Keep Them Organised Without Worrying.
           </p>
         </div>
-        <div className="flex flex-wrap md:justify-end gap-3">
-          <a href="#download" className="rounded-full bg-background text-foreground text-sm font-medium px-5 py-2.5 hover:opacity-90 transition">
+        <div className="flex flex-wrap gap-3 md:justify-end">
+          <a href="#download" className="rounded-full bg-background text-foreground text-[13px] sm:text-sm font-medium px-5 py-2.5 hover:opacity-90 transition">
             Download for Free →
           </a>
-          <a href="#start" className="rounded-full border border-background/40 text-background text-sm font-medium px-5 py-2.5 hover:bg-background/10 transition">
+          <a href="#start" className="rounded-full border border-background/40 text-background text-[13px] sm:text-sm font-medium px-5 py-2.5 hover:bg-background/10 transition">
             Get Started Free →
           </a>
         </div>

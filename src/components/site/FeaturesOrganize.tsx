@@ -21,17 +21,19 @@ const features = [
 
 export function FeaturesOrganize() {
   return (
-    <section className="px-6 py-24">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <section className="px-4 sm:px-6 py-16 sm:py-24">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-14 items-center">
         <div>
           <span className="inline-block rounded-full border border-border px-3 py-1 text-[12px] text-muted-foreground">
             sorted by users today
           </span>
-          <h2 className="mt-5 font-serif text-[38px] leading-[1.1] max-w-md">
+          <h2 className="mt-5 font-serif text-[30px] sm:text-[36px] md:text-[38px] leading-[1.1] max-w-md">
             Smarter Notes. One Simple Space to Capture, Organize & Remember
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground leading-relaxed">
-            Simplify the way you take notes. Write down your thoughts instantly, organize them into clear categories, and find anything in seconds. Capture ideas in real time, stay focused with smart organization, and keep all your notes in one place that moves with you.
+          <p className="mt-5 text-[14px] sm:text-[15px] text-muted-foreground leading-relaxed">
+            Simplify the way you take notes. Write down your thoughts instantly, organize them into clear
+            categories, and find anything in seconds. Capture ideas in real time, stay focused with smart
+            organization, and keep all your notes in one place that moves with you.
           </p>
 
           <div className="mt-8 space-y-6">
@@ -48,28 +50,92 @@ export function FeaturesOrganize() {
                   <f.icon size={18} className="text-foreground" />
                 </div>
                 <div>
-                  <h3 className="font-sans text-[15px] font-semibold">{f.title}</h3>
-                  <p className="mt-1 text-[14px] text-muted-foreground leading-relaxed">{f.body}</p>
+                  <h3 className="font-sans text-[14px] sm:text-[15px] font-semibold">{f.title}</h3>
+                  <p className="mt-1 text-[13px] sm:text-[14px] text-muted-foreground leading-relaxed">{f.body}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        <div className="relative h-[460px] grid place-items-center">
-          <motion.div
-            animate={{ y: [-12, 12, -12] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-72 h-72 rounded-full bg-gradient-to-br from-white via-secondary to-[oklch(0.88_0.01_85)] border border-border shadow-card"
-          >
-            <div className="absolute inset-6 rounded-full bg-gradient-to-tr from-secondary to-white opacity-80" />
-            <div className="absolute top-6 -left-8 w-12 h-12 rounded-2xl bg-card border border-border shadow-soft grid place-items-center text-xs">📝</div>
-            <div className="absolute -top-4 right-6 w-12 h-12 rounded-2xl bg-card border border-border shadow-soft grid place-items-center text-xs">💡</div>
-            <div className="absolute bottom-8 -right-6 w-12 h-12 rounded-2xl bg-card border border-border shadow-soft grid place-items-center text-xs">📌</div>
-            <div className="absolute -bottom-4 left-10 w-12 h-12 rounded-2xl bg-card border border-border shadow-soft grid place-items-center text-xs">🔖</div>
-          </motion.div>
+        <div className="relative h-[340px] sm:h-[420px] md:h-[460px] grid place-items-center">
+          <NotesBoxIllo />
         </div>
       </div>
     </section>
+  );
+}
+
+function NotesBoxIllo() {
+  const floatingCards = [
+    { emoji: "📝", label: "Quick note", top: "8%", left: "-4%", delay: 0 },
+    { emoji: "💡", label: "Idea", top: "5%", right: "4%", delay: 0.15 },
+    { emoji: "📌", label: "Pinned", bottom: "12%", right: "-2%", delay: 0.3 },
+    { emoji: "🔖", label: "Saved", bottom: "8%", left: "2%", delay: 0.45 },
+  ];
+
+  return (
+    <div className="relative w-full max-w-[320px] h-full mx-auto">
+      {floatingCards.map((c, i) => (
+        <motion.div
+          key={i}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3.5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: c.delay }}
+          className="absolute z-10 flex items-center gap-2 rounded-xl bg-card border border-border px-3 py-2 shadow-card text-[12px] font-medium"
+          style={{ top: c.top, left: c.left, right: c.right, bottom: c.bottom } as React.CSSProperties}
+        >
+          <span>{c.emoji}</span>
+          <span className="text-foreground/70">{c.label}</span>
+        </motion.div>
+      ))}
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="absolute inset-x-8 top-1/2 -translate-y-1/2"
+      >
+        <div className="rounded-3xl bg-card border border-border shadow-card overflow-hidden">
+          <div className="h-2 bg-secondary border-b border-border" />
+
+          <div className="p-5 space-y-3">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-5 h-5 rounded-md bg-foreground grid place-items-center">
+                <span className="text-background text-[10px] font-serif">N</span>
+              </div>
+              <span className="text-[12px] font-semibold text-foreground">My Notebook</span>
+            </div>
+
+            {["Meeting agenda", "Project ideas", "Daily plan", "Quick thoughts"].map((note, i) => (
+              <motion.div
+                key={note}
+                initial={{ opacity: 0, x: 10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
+                className="flex items-center gap-2.5 p-2.5 rounded-lg bg-secondary/70 border border-border/50"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-foreground/40 shrink-0" />
+                <span className="text-[12px] text-foreground/70">{note}</span>
+                <div className="ml-auto w-12 h-1.5 rounded-full bg-border" />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="px-5 py-3 border-t border-border flex items-center justify-between">
+            <span className="text-[11px] text-muted-foreground">4 notes</span>
+            <div className="flex gap-1">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full bg-border" />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-2 mx-4 h-3 rounded-b-2xl bg-secondary border border-border/60 border-t-0 shadow-sm" />
+        <div className="mt-0.5 mx-8 h-2.5 rounded-b-2xl bg-muted border border-border/40 border-t-0" />
+      </motion.div>
+    </div>
   );
 }
