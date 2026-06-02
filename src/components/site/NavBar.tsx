@@ -21,7 +21,9 @@ export function NavBar() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   return (
@@ -37,7 +39,6 @@ export function NavBar() {
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-14 sm:h-16">
-
           {/* Logo */}
           <a href="#" className="shrink-0">
             <NoteLogoFull height={28} />

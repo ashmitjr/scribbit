@@ -1,8 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -56,19 +55,28 @@
 }
 
 @layer utilities {
-  .bg-hero-card { background-color: var(--hero-card); }
-  .scrollbar-hide { scrollbar-width: none; }
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .bg-hero-card {
+    background-color: var(--hero-card);
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+  }
 
   html {
     overflow-x: hidden;
   }
 
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -77,7 +85,10 @@
     text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.025em;
@@ -85,10 +96,20 @@
 }
 
 @layer utilities {
-  .font-serif { font-family: var(--font-serif); }
-  .font-sans  { font-family: var(--font-sans);  }
-  .shadow-soft { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-  .shadow-card { box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05); }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .shadow-soft {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+  .shadow-card {
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 8px 24px rgba(0, 0, 0, 0.05);
+  }
 
   /* Premium grain texture — sprinkle on hero cards */
   .grain::after {

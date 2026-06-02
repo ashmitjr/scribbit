@@ -20,18 +20,17 @@ const features = [
 ];
 
 const floatingIcons = [
-  { Icon: Home,     x: "18%",  y: "12%", delay: 0,    dur: 3.2 },
-  { Icon: FileText, x: "44%",  y: "4%",  delay: 0.2,  dur: 3.8 },
-  { Icon: Share2,   x: "68%",  y: "14%", delay: 0.4,  dur: 3.5 },
-  { Icon: Bookmark, x: "28%",  y: "28%", delay: 0.15, dur: 4.0 },
-  { Icon: Settings, x: "58%",  y: "26%", delay: 0.35, dur: 3.3 },
+  { Icon: Home, x: "18%", y: "12%", delay: 0, dur: 3.2 },
+  { Icon: FileText, x: "44%", y: "4%", delay: 0.2, dur: 3.8 },
+  { Icon: Share2, x: "68%", y: "14%", delay: 0.4, dur: 3.5 },
+  { Icon: Bookmark, x: "28%", y: "28%", delay: 0.15, dur: 4.0 },
+  { Icon: Settings, x: "58%", y: "26%", delay: 0.35, dur: 3.3 },
 ];
 
 export function FeaturesOrganize() {
   return (
     <section className="px-4 sm:px-6 py-16 sm:py-24 overflow-hidden">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-14 items-start">
-
         {/* LEFT: badge + heading + paragraph + animation box */}
         <motion.div
           initial={{ opacity: 0, x: -28 }}
@@ -48,9 +47,10 @@ export function FeaturesOrganize() {
               Smarter Notes. One Simple Space to Capture, Organize and Remember
             </h2>
             <p className="mt-4 text-[14px] sm:text-[15px] text-muted-foreground leading-relaxed">
-              Simplify the way you take notes. Write down your thoughts instantly, organize them into clear
-              categories, and find anything in seconds. Capture ideas in real time, stay focused with smart
-              organization, and keep all your notes in one place that moves with you.
+              Simplify the way you take notes. Write down your thoughts instantly, organize them
+              into clear categories, and find anything in seconds. Capture ideas in real time, stay
+              focused with smart organization, and keep all your notes in one place that moves with
+              you.
             </p>
           </div>
 
@@ -86,7 +86,15 @@ export function FeaturesOrganize() {
                 <path d="M162 68 L180 56 L132 38 L106 52 Z" fill="oklch(0.28 0.003 60)" />
                 <path d="M162 68 L106 52 L106 46 L162 62 Z" fill="oklch(0.20 0.003 60 / 0.4)" />
                 <path d="M84 52 L106 52 L162 68 L28 68 Z" fill="oklch(0.16 0.003 60)" />
-                <line x1="95" y1="76" x2="95" y2="134" stroke="oklch(0.28 0.003 60)" strokeWidth="1" strokeDasharray="3 4" />
+                <line
+                  x1="95"
+                  y1="76"
+                  x2="95"
+                  y2="134"
+                  stroke="oklch(0.28 0.003 60)"
+                  strokeWidth="1"
+                  strokeDasharray="3 4"
+                />
                 <circle cx="95" cy="100" r="7" fill="oklch(0.30 0.003 60)" />
                 <circle cx="95" cy="100" r="4" fill="oklch(0.22 0.003 60)" />
               </svg>
@@ -115,13 +123,16 @@ export function FeaturesOrganize() {
                 <f.icon size={18} className="text-foreground" />
               </div>
               <div>
-                <h3 className="font-sans text-[14px] sm:text-[15px] font-semibold tracking-[-0.01em]">{f.title}</h3>
-                <p className="mt-1 text-[13px] sm:text-[14px] text-muted-foreground leading-relaxed">{f.body}</p>
+                <h3 className="font-sans text-[14px] sm:text-[15px] font-semibold tracking-[-0.01em]">
+                  {f.title}
+                </h3>
+                <p className="mt-1 text-[13px] sm:text-[14px] text-muted-foreground leading-relaxed">
+                  {f.body}
+                </p>
               </div>
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

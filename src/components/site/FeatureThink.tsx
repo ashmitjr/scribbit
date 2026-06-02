@@ -15,8 +15,8 @@ export function FeatureThink() {
             Notes that work the way you think.
           </h2>
           <p className="mt-4 sm:mt-5 text-[14px] sm:text-[15px] text-muted-foreground leading-relaxed max-w-sm">
-            Notes shouldn't feel messy or scattered. With Scribbit, every thought flows
-            into an organized system that adapts to your style and keeps you focused.
+            Notes shouldn't feel messy or scattered. With Scribbit, every thought flows into an
+            organized system that adapts to your style and keeps you focused.
           </p>
         </motion.div>
 

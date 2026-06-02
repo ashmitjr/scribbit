@@ -1,13 +1,20 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, WifiOff, Smartphone, ArrowDownToLine, RefreshCw, Sparkles } from "lucide-react";
+import {
+  ShieldCheck,
+  WifiOff,
+  Smartphone,
+  ArrowDownToLine,
+  RefreshCw,
+  Sparkles,
+} from "lucide-react";
 
 const items = [
-  { icon: Sparkles,        label: "Free plan, forever" },
-  { icon: WifiOff,         label: "Works offline" },
-  { icon: ShieldCheck,     label: "End-to-end encrypted" },
-  { icon: Smartphone,      label: "iOS · Android · Web · Desktop" },
+  { icon: Sparkles, label: "Free plan, forever" },
+  { icon: WifiOff, label: "Works offline" },
+  { icon: ShieldCheck, label: "End-to-end encrypted" },
+  { icon: Smartphone, label: "iOS · Android · Web · Desktop" },
   { icon: ArrowDownToLine, label: "Import from Notion or Evernote" },
-  { icon: RefreshCw,       label: "Instant cross-device sync" },
+  { icon: RefreshCw, label: "Instant cross-device sync" },
 ];
 
 export function TrustBar() {
@@ -26,7 +33,9 @@ export function TrustBar() {
             variants={{
               hidden: { opacity: 0, scale: 0.9, y: 6 },
               show: {
-                opacity: 1, scale: 1, y: 0,
+                opacity: 1,
+                scale: 1,
+                y: 0,
                 transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
               },
             }}

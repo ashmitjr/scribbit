@@ -28,7 +28,13 @@ export function NoteLogo({ size = 32, className = "" }: NoteLogoProps) {
   );
 }
 
-export function NoteLogoFull({ height = 28, className = "" }: { height?: number; className?: string }) {
+export function NoteLogoFull({
+  height = 28,
+  className = "",
+}: {
+  height?: number;
+  className?: string;
+}) {
   const w = Math.round(height * (36 / 36));
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>

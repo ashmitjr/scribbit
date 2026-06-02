@@ -1,17 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
-
-import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
-
+import { Outlet, Link, createRootRouteWithContext, useRouter } from "@tanstack/react-router";
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -37,9 +25,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -78,44 +63,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Scribbit" },
-      { name: "description", content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas." },
+      {
+        name: "description",
+        content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Scribbit" },
-      { property: "og:description", content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas." },
+      {
+        property: "og:description",
+        content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Scribbit" },
-      { name: "twitter:description", content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/C6el9hY0ybS5TH5stiP53NRHCCl2/social-images/social-1780381207572-7332.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/C6el9hY0ybS5TH5stiP53NRHCCl2/social-images/social-1780381207572-7332.webp" },
-    ],
-    links: [
       {
-        rel: "stylesheet",
-        href: appCss,
+        name: "twitter:description",
+        content: "Scribbit is a note-taking app for capturing, organizing, and remembering ideas.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/C6el9hY0ybS5TH5stiP53NRHCCl2/social-images/social-1780381207572-7332.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/C6el9hY0ybS5TH5stiP53NRHCCl2/social-images/social-1780381207572-7332.webp",
       },
     ],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

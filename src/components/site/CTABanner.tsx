@@ -4,8 +4,8 @@ import { NoteLogo } from "./NoteLogo";
 
 const stats = [
   { value: "100K+", label: "active users" },
-  { value: "4.8",   label: "App Store rating" },
-  { value: "Free",  label: "to get started" },
+  { value: "4.8", label: "App Store rating" },
+  { value: "Free", label: "to get started" },
 ];
 
 export function CTABanner() {
@@ -36,7 +36,9 @@ export function CTABanner() {
         {/* Cursor spotlight */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-0"
-          style={{ background: `radial-gradient(500px circle at ${gx} ${gy}, oklch(1 0 0 / 0.05), transparent 60%)` }}
+          style={{
+            background: `radial-gradient(500px circle at ${gx} ${gy}, oklch(1 0 0 / 0.05), transparent 60%)`,
+          }}
         />
 
         {/* Subtle dot grid */}
@@ -51,7 +53,6 @@ export function CTABanner() {
 
         <div className="relative z-10 px-8 sm:px-14 lg:px-20 py-14 sm:py-20">
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12 lg:gap-20">
-
             {/* Left: headline + sub */}
             <div className="max-w-2xl">
               <motion.div
@@ -84,8 +85,8 @@ export function CTABanner() {
                 transition={{ delay: 0.24, duration: 0.5 }}
                 className="mt-5 text-[14px] sm:text-[15px] text-white/50 leading-relaxed max-w-lg"
               >
-                Most note apps become digital junk drawers. Notely is the one you keep coming back to — 
-                because it works with how your brain already thinks, not against it.
+                Most note apps become digital junk drawers. Notely is the one you keep coming back
+                to — because it works with how your brain already thinks, not against it.
               </motion.p>
 
               {/* Stats row */}
@@ -101,10 +102,16 @@ export function CTABanner() {
                     key={label}
                     variants={{
                       hidden: { opacity: 0, y: 10 },
-                      show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.45 } },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { ease: [0.16, 1, 0.3, 1], duration: 0.45 },
+                      },
                     }}
                   >
-                    <p className="font-semibold text-[22px] sm:text-[26px] text-white tracking-[-0.03em] leading-none">{value}</p>
+                    <p className="font-semibold text-[22px] sm:text-[26px] text-white tracking-[-0.03em] leading-none">
+                      {value}
+                    </p>
                     <p className="mt-1 text-[12px] text-white/40 font-medium">{label}</p>
                   </motion.div>
                 ))}
@@ -162,7 +169,6 @@ export function CTABanner() {
                 </p>
               </div>
             </motion.div>
-
           </div>
         </div>
       </motion.div>

@@ -26,7 +26,6 @@ export function Hero() {
   return (
     <section ref={sectionRef} className="pt-14 pb-6 px-3 sm:px-4 lg:px-6">
       <div className="grain relative w-full max-w-7xl mx-auto bg-hero-card rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] overflow-hidden min-h-[480px] sm:min-h-[560px] lg:min-h-[680px]">
-
         {/* ── Mountain — parallax background ── */}
         <motion.div
           style={{ y: mountainY, scale: mountainScale }}
@@ -40,7 +39,9 @@ export function Hero() {
           />
           <div
             className="absolute inset-x-0 top-0 h-[52%] pointer-events-none"
-            style={{ background: "linear-gradient(to bottom, var(--hero-card) 0%, transparent 100%)" }}
+            style={{
+              background: "linear-gradient(to bottom, var(--hero-card) 0%, transparent 100%)",
+            }}
           />
         </motion.div>
 
@@ -53,7 +54,10 @@ export function Hero() {
         {/* ── Radial glow behind headline ── */}
         <div
           className="absolute inset-x-0 top-0 h-[55%] pointer-events-none z-[5]"
-          style={{ background: "radial-gradient(ellipse 80% 60% at 50% 20%, oklch(0.96 0.003 85 / 0.55) 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 50% 20%, oklch(0.96 0.003 85 / 0.55) 0%, transparent 70%)",
+          }}
         />
 
         {/* ── Content ── */}
@@ -91,8 +95,8 @@ export function Hero() {
             transition={{ delay: 0.85, duration: 0.5, ease: "easeOut" }}
             className="mt-3 mx-auto max-w-[260px] sm:max-w-[340px] lg:max-w-[400px] text-[13px] sm:text-[14px] lg:text-[15px] leading-[1.7] text-muted-foreground"
           >
-            Combine note-taking, idea tracking, and daily planning in
-            one smart notebook ready whenever inspiration hits.
+            Combine note-taking, idea tracking, and daily planning in one smart notebook ready
+            whenever inspiration hits.
           </motion.p>
 
           {/* Toolbar */}
@@ -113,7 +117,10 @@ export function Hero() {
             className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3"
           >
             <motion.a
-              variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.5 } } }}
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.5 } },
+              }}
               whileHover={{ scale: 1.04, boxShadow: "0 4px 18px rgba(0,0,0,0.22)" }}
               whileTap={{ scale: 0.97 }}
               href="#download"
@@ -122,7 +129,10 @@ export function Hero() {
               Download for Playstore
             </motion.a>
             <motion.a
-              variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.5 } } }}
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.5 } },
+              }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               href="#trial"

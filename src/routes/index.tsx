@@ -16,10 +16,14 @@ export const Route = createFileRoute("/")({
       { title: "Notely — Ideas. Notes. Clarity." },
       {
         name: "description",
-        content: "One smart notebook for note-taking, idea tracking, and daily planning. Free forever.",
+        content:
+          "One smart notebook for note-taking, idea tracking, and daily planning. Free forever.",
       },
       { property: "og:title", content: "Notely — Ideas. Notes. Clarity." },
-      { property: "og:description", content: "One smart notebook for note-taking, idea tracking, and daily planning." },
+      {
+        property: "og:description",
+        content: "One smart notebook for note-taking, idea tracking, and daily planning.",
+      },
     ],
   }),
   component: Index,

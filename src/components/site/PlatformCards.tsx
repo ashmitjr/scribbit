@@ -59,7 +59,9 @@ export function PlatformCards() {
               {c.illo}
             </div>
             <h3 className="font-sans text-[15px] sm:text-[16px] font-semibold">{c.title}</h3>
-            <p className="mt-2 text-[13px] sm:text-[14px] text-muted-foreground leading-relaxed">{c.body}</p>
+            <p className="mt-2 text-[13px] sm:text-[14px] text-muted-foreground leading-relaxed">
+              {c.body}
+            </p>
           </motion.div>
         ))}
       </motion.div>
@@ -136,7 +138,13 @@ function WindowsIllo() {
   return (
     <div className="w-full h-full flex items-end justify-center pb-4">
       <div className="relative">
-        <svg width="180" height="130" viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="180"
+          height="130"
+          viewBox="0 0 180 130"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <ellipse cx="90" cy="110" rx="72" ry="18" fill="oklch(0.22 0.003 60)" />
           <rect x="26" y="55" width="128" height="60" rx="24" fill="oklch(0.22 0.003 60)" />
           <circle cx="50" cy="52" r="22" fill="oklch(0.22 0.003 60)" />
@@ -191,7 +199,16 @@ function WebIllo() {
 
         <div className="absolute inset-0 grid place-items-center">
           <div className="w-10 h-10 rounded-full bg-foreground grid place-items-center shadow-card">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <circle cx="12" cy="8" r="4" />
               <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
             </svg>

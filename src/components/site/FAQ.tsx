@@ -43,7 +43,6 @@ export function FAQ() {
   return (
     <section className="px-4 sm:px-6 py-16 sm:py-24" id="faq">
       <div className="max-w-3xl mx-auto">
-
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +84,11 @@ export function FAQ() {
                   {faq.q}
                 </span>
                 <span className="shrink-0 grid place-items-center w-6 h-6 rounded-full border border-border text-muted-foreground group-hover:border-foreground/30 transition-colors">
-                  {open === i ? <Minus size={12} strokeWidth={2} /> : <Plus size={12} strokeWidth={2} />}
+                  {open === i ? (
+                    <Minus size={12} strokeWidth={2} />
+                  ) : (
+                    <Plus size={12} strokeWidth={2} />
+                  )}
                 </span>
               </button>
 
@@ -117,7 +120,10 @@ export function FAQ() {
           className="mt-10 text-center text-[13px] text-muted-foreground"
         >
           Still have a question?{" "}
-          <a href="mailto:hello@notely.app" className="text-foreground underline underline-offset-2 hover:opacity-70 transition-opacity">
+          <a
+            href="mailto:hello@notely.app"
+            className="text-foreground underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
             Write to us directly.
           </a>
         </motion.p>

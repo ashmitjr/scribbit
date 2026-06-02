@@ -23,7 +23,10 @@ export function Footer() {
             <ul className="mt-3 sm:mt-4 space-y-2">
               {c.links.map((l) => (
                 <li key={l}>
-                  <a href="#" className="text-[13px] sm:text-[14px] text-muted-foreground hover:text-foreground transition-colors">
+                  <a
+                    href="#"
+                    className="text-[13px] sm:text-[14px] text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     {l}
                   </a>
                 </li>
@@ -34,10 +37,16 @@ export function Footer() {
       </div>
 
       <div className="max-w-5xl mx-auto mt-10 sm:mt-14 pt-6 border-t border-border flex flex-wrap items-center justify-between gap-4">
-        <p className="text-[12px] sm:text-[13px] text-muted-foreground">© 2026 Ashmit. All rights reserved.</p>
+        <p className="text-[12px] sm:text-[13px] text-muted-foreground">
+          © 2026 Ashmit. All rights reserved.
+        </p>
         <div className="flex items-center gap-3 text-muted-foreground">
-          <a href="#" aria-label="LinkedIn" className="hover:text-foreground transition-colors"><Linkedin size={16} /></a>
-          <a href="#" aria-label="Twitter" className="hover:text-foreground transition-colors"><Twitter size={16} /></a>
+          <a href="#" aria-label="LinkedIn" className="hover:text-foreground transition-colors">
+            <Linkedin size={16} />
+          </a>
+          <a href="#" aria-label="Twitter" className="hover:text-foreground transition-colors">
+            <Twitter size={16} />
+          </a>
         </div>
       </div>
     </footer>
