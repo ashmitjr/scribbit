@@ -17,27 +17,38 @@ export function CTABanner() {
       <motion.div
         ref={ref}
         onMouseMove={onMove}
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative max-w-5xl mx-auto rounded-2xl sm:rounded-3xl bg-foreground text-background overflow-hidden p-8 sm:p-10 md:p-14 grid md:grid-cols-2 gap-6 sm:gap-8 items-center"
+        className="relative max-w-5xl mx-auto rounded-2xl sm:rounded-3xl bg-[oklch(0.88_0.004_85)] border border-border overflow-hidden px-8 sm:px-14 py-12 sm:py-16 text-center"
         style={{
           backgroundImage:
-            "radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.08), transparent 60%)",
+            "radial-gradient(500px circle at var(--mx, 50%) var(--my, 50%), rgba(0,0,0,0.03), transparent 70%)",
         }}
       >
-        <div>
-          <h2 className="font-serif text-[28px] sm:text-[36px] leading-tight text-background">How You Take Notes?</h2>
-          <p className="mt-3 text-[14px] sm:text-[15px] text-background/70 max-w-md">
-            Start Using Notely To Capture Your Thoughts Instantly And Keep Them Organised Without Worrying.
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-3 md:justify-end">
-          <a href="#download" className="rounded-full bg-background text-foreground text-[13px] sm:text-sm font-medium px-5 py-2.5 hover:opacity-90 transition">
+        {/* Decorative blobs */}
+        <div className="pointer-events-none absolute -left-12 -bottom-10 w-40 h-40 rounded-full bg-border/50 blur-2xl" />
+        <div className="pointer-events-none absolute -right-10 -top-8 w-32 h-32 rounded-full bg-border/40 blur-2xl" />
+
+        <h2 className="relative font-serif text-[28px] sm:text-[38px] md:text-[42px] leading-tight text-foreground">
+          How You Take Notes?
+        </h2>
+        <p className="relative mt-3 text-[13px] sm:text-[15px] text-muted-foreground max-w-sm mx-auto leading-relaxed">
+          Start Using Notely To Capture Your Thoughts Instantly And Keep Them Organised Without Worrying.
+        </p>
+
+        <div className="relative mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#download"
+            className="rounded-full bg-foreground text-background text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 hover:opacity-90 transition shadow-sm"
+          >
             Download for Free →
           </a>
-          <a href="#start" className="rounded-full border border-background/40 text-background text-[13px] sm:text-sm font-medium px-5 py-2.5 hover:bg-background/10 transition">
+          <a
+            href="#start"
+            className="rounded-full border border-border text-foreground text-[13px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 hover:bg-foreground/5 transition"
+          >
             Get Started Free →
           </a>
         </div>
