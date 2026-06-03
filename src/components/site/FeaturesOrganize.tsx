@@ -43,7 +43,7 @@ export function FeaturesOrganize() {
             <span className="inline-block rounded-full border border-border px-3 py-1 text-[12px] text-muted-foreground">
               sorted by users today
             </span>
-            <h2 className="mt-4 font-sans font-semibold text-[28px] sm:text-[34px] md:text-[38px] leading-[1.1] tracking-[-0.025em] max-w-md">
+            <h2 className="mt-4 font-sans font-semibold text-[26px] xs:text-[30px] sm:text-[34px] md:text-[38px] leading-[1.1] tracking-[-0.03em] max-w-md">
               Smarter Notes. One Simple Space to Capture, Organize and Remember
             </h2>
             <p className="mt-4 text-[14px] sm:text-[15px] text-muted-foreground leading-relaxed">

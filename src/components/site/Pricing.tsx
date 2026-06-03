@@ -44,7 +44,7 @@ export function Pricing() {
   return (
     <section className="px-4 sm:px-6 py-16 sm:py-24">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="font-serif text-[32px] sm:text-[40px] leading-tight">
+        <h2 className="font-serif text-[28px] xs:text-[32px] sm:text-[40px] leading-[1.08] tracking-[-0.01em]">
           Choose your pricing plan
         </h2>
         <p className="mt-4 text-[14px] sm:text-[15px] text-muted-foreground max-w-xl mx-auto leading-relaxed">

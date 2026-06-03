@@ -43,11 +43,12 @@ export function PlatformCards() {
   return (
     <section className="px-4 sm:px-6 py-16 sm:py-24 bg-background">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-serif text-[32px] sm:text-[40px] md:text-[48px] leading-[1.08]">
+        <h2 className="font-serif text-[26px] xs:text-[30px] sm:text-[40px] md:text-[48px] leading-[1.05] tracking-[-0.02em]">
           <Words words={line1} />
           <br />
           <Words words={line2} delay={line1.length * 0.07} />
         </h2>
+
       </div>
 
       <motion.div

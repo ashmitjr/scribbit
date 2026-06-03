@@ -71,7 +71,7 @@ export function CTABanner() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.14, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                className="font-sans font-semibold text-[34px] sm:text-[46px] lg:text-[56px] leading-[1.02] tracking-[-0.03em] text-white"
+                className="font-sans font-semibold text-[28px] xs:text-[32px] sm:text-[46px] lg:text-[56px] leading-[1.04] tracking-[-0.035em] text-white"
               >
                 Write now.
                 <br />
