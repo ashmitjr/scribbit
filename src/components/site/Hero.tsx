@@ -63,11 +63,12 @@ export function Hero() {
           </motion.div>
 
           {/* Headline */}
-          <h1 className="mt-3 sm:mt-4 font-sans font-semibold text-foreground text-[36px] sm:text-[54px] md:text-[62px] lg:text-[72px] leading-[1.02] tracking-[-0.03em]">
+          <h1 className="mt-3 sm:mt-4 font-sans font-semibold text-foreground text-[30px] xs:text-[34px] sm:text-[54px] md:text-[62px] lg:text-[72px] leading-[1.04] tracking-[-0.035em]">
             <Words words={line1} delay={0.28} />
             <br />
             <Words words={line2} delay={0.28 + line1.length * 0.055} />
           </h1>
+
 
           {/* Subtitle */}
           <motion.p
