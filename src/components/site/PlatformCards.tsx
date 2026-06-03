@@ -1,17 +1,16 @@
 import { motion } from "framer-motion";
 import {
-  Bell,
-  CheckCircle2,
-  Cloud,
-  Command,
   FileText,
   Folder,
-  Globe2,
-  Monitor,
+  Grid2x2,
+  Home,
+  Keyboard,
+  LayoutGrid,
+  MousePointer2,
+  Phone,
   Search,
-  Smartphone,
-  Sparkles,
-  Users,
+  Settings,
+  X,
 } from "lucide-react";
 
 const line1 = "Ideas. Notes. Clarity.".split(" ");
@@ -21,17 +20,17 @@ const cards = [
   {
     title: "Notely for Android",
     body: "Take notes on the go with fast capture sync across all your devices. Capture thoughts instantly and access them anytime.",
-    illo: <AndroidIllo />,
+    illo: <SimpleIllo />,
   },
   {
     title: "Notely for iOS",
     body: "Jot down ideas, organize with folders, and collaborate on shared projects, all from your iPhone or iPad.",
-    illo: <IOSIllo />,
+    illo: <StatsIllo />,
   },
   {
     title: "Notely for Windows / Linux",
     body: "Work smarter on desktop. Enjoy seamless typing, keyboard shortcuts, and distraction-free writing.",
-    illo: <WindowsIllo />,
+    illo: <DesktopIllo />,
   },
   {
     title: "Notely for Web",
@@ -56,7 +55,7 @@ export function PlatformCards() {
         whileInView="show"
         viewport={{ once: true, margin: "-80px" }}
         variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-        className="mt-10 sm:mt-14 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+        className="mt-10 sm:mt-14 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
       >
         {cards.map((c) => (
           <motion.div
@@ -65,14 +64,16 @@ export function PlatformCards() {
               hidden: { opacity: 0, scale: 0.94 },
               show: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
             }}
-            whileHover={{ scale: 1.015, boxShadow: "0 8px 28px rgba(0,0,0,0.08)" }}
-            className="rounded-2xl bg-card border border-border p-5 sm:p-6 shadow-soft"
+            whileHover={{ scale: 1.01, boxShadow: "0 8px 28px rgba(0,0,0,0.06)" }}
+            className="rounded-3xl bg-card border border-border/60 p-5 sm:p-6 shadow-soft"
           >
-            <div className="relative h-44 sm:h-48 grid place-items-center rounded-xl bg-secondary/60 mb-5 overflow-hidden">
+            <div className="relative h-44 sm:h-52 grid place-items-center rounded-2xl bg-secondary/70 mb-6 overflow-hidden">
               {c.illo}
             </div>
-            <h3 className="font-sans text-[15px] sm:text-[16px] font-semibold">{c.title}</h3>
-            <p className="mt-2 text-[13px] sm:text-[14px] text-muted-foreground leading-relaxed">
+            <h3 className="font-serif text-[22px] sm:text-[26px] leading-tight tracking-tight">
+              {c.title}
+            </h3>
+            <p className="mt-3 text-[14px] sm:text-[15px] text-muted-foreground leading-relaxed">
               {c.body}
             </p>
           </motion.div>
@@ -82,226 +83,160 @@ export function PlatformCards() {
   );
 }
 
-function AndroidIllo() {
+/* ---------- Card 1: Keep it simple ---------- */
+function SimpleIllo() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center px-5">
-      <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-foreground/90 text-background text-[10px] font-medium px-2.5 py-1 shadow-sm">
-        <Sparkles size={10} />
-        Quick capture
-      </span>
+    <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 px-6">
+      <div className="rounded-full bg-foreground text-background text-[12px] font-medium px-4 py-1.5 shadow-sm">
+        Keep it simple
+      </div>
 
-      <div className="relative w-[156px] h-[154px]">
-        <div className="absolute left-3 top-0 w-[112px] h-[150px] rounded-[24px] bg-foreground p-1.5 shadow-card">
-          <div className="h-full rounded-[20px] bg-card border border-white/10 overflow-hidden">
-            <div className="flex items-center justify-between px-3 pt-3">
-              <div className="h-1.5 w-8 rounded-full bg-border" />
-              <Bell size={12} className="text-muted-foreground" />
-            </div>
-            <div className="px-3 pt-4">
-              <div className="flex items-center gap-2">
-                <div className="grid place-items-center w-8 h-8 rounded-xl bg-foreground text-background">
-                  <Smartphone size={14} />
-                </div>
-                <div className="space-y-1">
-                  <div className="h-1.5 w-12 rounded-full bg-foreground/80" />
-                  <div className="h-1.5 w-8 rounded-full bg-border" />
-                </div>
-              </div>
-              <div className="mt-4 space-y-1.5">
-                <div className="h-2 w-full rounded-full bg-secondary" />
-                <div className="h-2 w-10/12 rounded-full bg-secondary" />
-                <div className="h-2 w-7/12 rounded-full bg-secondary" />
-              </div>
-            </div>
-            <div className="absolute bottom-3 left-3 right-3 rounded-2xl bg-secondary border border-border px-3 py-2">
-              <div className="h-1.5 w-14 rounded-full bg-foreground/70" />
-              <div className="mt-1.5 h-1.5 w-9 rounded-full bg-border" />
-            </div>
-          </div>
-        </div>
-
-        <motion.div
-          animate={{ x: [0, 4, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute right-0 bottom-5 flex items-center gap-2 rounded-2xl bg-card border border-border shadow-card px-3 py-2"
-        >
-          <CheckCircle2 size={14} className="text-foreground" />
-          <div>
-            <div className="h-1.5 w-16 rounded-full bg-foreground/80" />
-            <div className="mt-1.5 h-1.5 w-10 rounded-full bg-border" />
-          </div>
-        </motion.div>
-
-        <div className="absolute left-0 bottom-2 grid place-items-center w-10 h-10 rounded-2xl bg-card border border-border shadow-soft">
-          <Cloud size={15} className="text-foreground/70" />
+      <div className="flex items-center gap-2">
+        <IconCircle><Home size={14} /></IconCircle>
+        <IconCircle><FileText size={14} /></IconCircle>
+        <IconCircle><X size={14} /></IconCircle>
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-foreground text-background text-[12px] font-medium px-3.5 py-2 shadow-sm">
+          <Phone size={12} />
+          Book a Call
         </div>
       </div>
+
+      <svg width="140" height="14" viewBox="0 0 140 14" fill="none" className="text-muted-foreground/50">
+        <path
+          d="M2 7 C 22 -2, 42 16, 70 7 S 118 -2, 138 7"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          fill="none"
+        />
+      </svg>
     </div>
   );
 }
 
-function IOSIllo() {
-  const items = [
-    { icon: FileText, label: "Meeting notes", width: "w-24" },
-    { icon: Folder, label: "Research folder", width: "w-20" },
-    { icon: Users, label: "Shared draft", width: "w-16" },
+function IconCircle({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="grid place-items-center w-9 h-9 rounded-full bg-card border border-border/60 text-foreground/70 shadow-soft">
+      {children}
+    </div>
+  );
+}
+
+/* ---------- Card 2: Stat rows ---------- */
+function StatsIllo() {
+  const rows = [
+    { icon: Phone, label: "Note taken", fill: 0.7 },
+    { icon: Folder, label: "folders used", fill: 0.5 },
+    { icon: Grid2x2, label: "collaborated projects", fill: 0.35 },
   ];
   return (
-    <div className="relative w-full h-full flex items-center justify-center px-6">
-      <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-card border border-border text-foreground text-[10px] font-medium px-2.5 py-1 shadow-soft">
-        <Command size={10} />
-        iCloud sync
-      </div>
+    <div className="w-full px-4 sm:px-5 space-y-2.5">
+      {rows.map((r, i) => (
+        <motion.div
+          key={r.label}
+          initial={{ opacity: 0, x: 10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 + 0.15, duration: 0.4 }}
+          className="flex items-center gap-3 rounded-full bg-card border border-border/60 pl-4 pr-3 py-2.5 shadow-soft"
+        >
+          <r.icon size={14} className="text-foreground/70 shrink-0" />
+          <span className="text-[12px] sm:text-[13px] font-medium text-foreground/80 flex-1 truncate">
+            {r.label}
+          </span>
+          <div className="relative h-1.5 w-12 rounded-full bg-secondary overflow-hidden">
+            <div
+              className="absolute inset-y-0 left-0 rounded-full bg-foreground/30"
+              style={{ width: `${r.fill * 100}%` }}
+            />
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
-      <div className="relative w-full max-w-[226px] pt-6">
-        <div className="absolute -right-1 top-2 w-24 h-28 rounded-[24px] bg-foreground/90 shadow-card" />
-        <div className="absolute -right-1.5 top-3 w-24 h-28 rounded-[22px] bg-card border border-border shadow-card p-3">
-          <div className="h-1.5 w-10 rounded-full bg-foreground/70" />
-          <div className="mt-3 space-y-1.5">
+/* ---------- Card 3: Desktop ---------- */
+function DesktopIllo() {
+  return (
+    <div className="relative w-full h-full flex items-center justify-center px-5">
+      <div className="w-full max-w-[260px] rounded-2xl bg-card border border-border/60 shadow-soft overflow-hidden">
+        <div className="flex items-center justify-between border-b border-border/60 px-3 py-2">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-border" />
+            <span className="w-2 h-2 rounded-full bg-border" />
+            <span className="w-2 h-2 rounded-full bg-border" />
+          </div>
+          <Keyboard size={12} className="text-muted-foreground" />
+        </div>
+        <div className="grid grid-cols-[60px_1fr]">
+          <div className="border-r border-border/60 bg-secondary/60 p-2.5 space-y-2 min-h-[100px]">
+            <div className="h-1.5 w-8 rounded-full bg-foreground/60" />
+            <div className="h-1.5 w-9 rounded-full bg-border" />
+            <div className="h-1.5 w-6 rounded-full bg-border" />
+            <div className="h-1.5 w-8 rounded-full bg-border" />
+          </div>
+          <div className="p-3 space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="h-2 w-16 rounded-full bg-foreground/70" />
+              <Search size={11} className="text-muted-foreground" />
+            </div>
             <div className="h-1.5 w-full rounded-full bg-secondary" />
             <div className="h-1.5 w-10/12 rounded-full bg-secondary" />
             <div className="h-1.5 w-7/12 rounded-full bg-secondary" />
+            <div className="pt-1 flex gap-1.5">
+              <div className="h-5 w-10 rounded-md bg-secondary border border-border/60" />
+              <div className="h-5 w-10 rounded-md bg-foreground" />
+            </div>
           </div>
-        </div>
-
-        <div className="relative z-10 space-y-2.5">
-          {items.map((item, i) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, x: 12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 + 0.2, duration: 0.4 }}
-              className="flex items-center gap-3 rounded-2xl bg-card border border-border px-3 py-2.5 shadow-soft"
-            >
-              <div className="w-8 h-8 rounded-xl bg-secondary border border-border grid place-items-center shrink-0">
-                <item.icon size={13} className="text-foreground" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <span className="text-[12px] font-medium text-foreground/80">{item.label}</span>
-                <div className={`mt-1.5 h-1.5 rounded-full bg-border ${item.width}`} />
-              </div>
-            </motion.div>
-          ))}
         </div>
       </div>
     </div>
   );
 }
 
-function WindowsIllo() {
-  return (
-    <div className="relative w-full h-full flex items-center justify-center px-5">
-      <div className="relative w-full max-w-[260px]">
-        <div className="rounded-2xl bg-foreground p-1.5 shadow-card">
-          <div className="rounded-[14px] bg-card border border-white/10 overflow-hidden">
-            <div className="flex items-center justify-between border-b border-border px-3 py-2">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-border" />
-                <span className="w-2 h-2 rounded-full bg-border" />
-                <span className="w-2 h-2 rounded-full bg-border" />
-              </div>
-              <div className="flex items-center gap-1.5 text-muted-foreground">
-                <Monitor size={12} />
-                <span className="text-[10px] font-medium">Desktop</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-[64px_1fr] min-h-[104px]">
-              <div className="border-r border-border bg-secondary/60 p-2.5 space-y-2">
-                <div className="h-2 w-8 rounded-full bg-foreground/70" />
-                <div className="h-1.5 w-10 rounded-full bg-border" />
-                <div className="h-1.5 w-7 rounded-full bg-border" />
-                <div className="mt-4 h-7 rounded-xl bg-card border border-border" />
-              </div>
-              <div className="p-3.5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="h-2 w-20 rounded-full bg-foreground/80" />
-                    <div className="mt-1.5 h-1.5 w-14 rounded-full bg-border" />
-                  </div>
-                  <Search size={13} className="text-muted-foreground" />
-                </div>
-                <div className="mt-4 space-y-1.5">
-                  <div className="h-1.5 w-full rounded-full bg-secondary" />
-                  <div className="h-1.5 w-11/12 rounded-full bg-secondary" />
-                  <div className="h-1.5 w-8/12 rounded-full bg-secondary" />
-                </div>
-                <div className="mt-4 grid grid-cols-3 gap-1.5">
-                  <div className="h-7 rounded-lg bg-secondary border border-border" />
-                  <div className="h-7 rounded-lg bg-secondary border border-border" />
-                  <div className="h-7 rounded-lg bg-foreground" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute -bottom-4 left-1/2 h-4 w-20 -translate-x-1/2 rounded-b-2xl bg-foreground/90" />
-        <div className="absolute -bottom-6 left-1/2 h-2 w-32 -translate-x-1/2 rounded-full bg-foreground/15" />
-      </div>
-    </div>
-  );
-}
-
+/* ---------- Card 4: Web ---------- */
 function WebIllo() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center px-5">
-      <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-foreground/90 text-background text-[10px] font-medium px-2.5 py-1">
-        <Globe2 size={10} />
-        Responsive
-      </span>
-
-      <div className="relative w-full max-w-[250px] h-[138px]">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          className="absolute right-5 top-4 w-16 h-16 rounded-full border border-dashed border-border"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          className="absolute right-8 top-7 w-10 h-10 rounded-full border border-border/60"
-        />
-
-        <div className="absolute left-0 top-6 w-[178px] rounded-2xl bg-card border border-border shadow-card overflow-hidden">
-          <div className="flex items-center gap-1.5 border-b border-border px-3 py-2">
-            <span className="w-2 h-2 rounded-full bg-border" />
-            <div className="h-1.5 w-20 rounded-full bg-secondary" />
-          </div>
-          <div className="p-3.5">
-            <div className="flex items-center gap-2">
-              <div className="grid place-items-center w-8 h-8 rounded-xl bg-foreground text-background">
-                <FileText size={14} />
-              </div>
-              <div className="space-y-1.5">
-                <div className="h-1.5 w-20 rounded-full bg-foreground/80" />
-                <div className="h-1.5 w-12 rounded-full bg-border" />
-              </div>
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              <div className="h-12 rounded-xl bg-secondary border border-border p-2">
-                <div className="h-1.5 w-9 rounded-full bg-foreground/60" />
-                <div className="mt-2 h-1.5 w-6 rounded-full bg-border" />
-              </div>
-              <div className="h-12 rounded-xl bg-secondary border border-border p-2">
-                <div className="h-1.5 w-8 rounded-full bg-foreground/60" />
-                <div className="mt-2 h-1.5 w-7 rounded-full bg-border" />
-              </div>
-            </div>
-          </div>
+    <div className="relative w-full h-full flex items-center justify-center gap-3 px-5">
+      <div className="w-[150px] rounded-xl bg-card border border-border/60 shadow-soft overflow-hidden">
+        <div className="flex items-center gap-1 border-b border-border/60 px-2 py-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-border" />
+          <span className="w-1.5 h-1.5 rounded-full bg-border" />
+          <div className="ml-1 h-1.5 w-16 rounded-full bg-secondary" />
         </div>
-
-        <div className="absolute right-7 bottom-0 w-[72px] rounded-[18px] bg-foreground p-1.5 shadow-card">
-          <div className="rounded-[14px] bg-card border border-white/10 p-2">
-            <div className="h-1.5 w-8 rounded-full bg-border" />
-            <div className="mt-3 space-y-1.5">
-              <div className="h-1.5 w-full rounded-full bg-secondary" />
-              <div className="h-1.5 w-8 rounded-full bg-secondary" />
+        <div className="p-3 space-y-2">
+          <div className="flex items-center gap-2">
+            <div className="grid place-items-center w-7 h-7 rounded-lg bg-foreground text-background">
+              <LayoutGrid size={12} />
             </div>
+            <div className="space-y-1">
+              <div className="h-1.5 w-14 rounded-full bg-foreground/70" />
+              <div className="h-1.5 w-9 rounded-full bg-border" />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-1.5 pt-1">
+            <div className="h-8 rounded-md bg-secondary border border-border/60" />
+            <div className="h-8 rounded-md bg-secondary border border-border/60" />
           </div>
         </div>
       </div>
+
+      <div className="w-[64px] rounded-[14px] bg-foreground p-1 shadow-soft">
+        <div className="rounded-[10px] bg-card p-1.5 space-y-1">
+          <div className="h-1 w-6 rounded-full bg-border" />
+          <div className="h-1 w-full rounded-full bg-secondary" />
+          <div className="h-1 w-8 rounded-full bg-secondary" />
+          <div className="grid place-items-center mt-2 w-6 h-6 rounded-md bg-secondary mx-auto">
+            <MousePointer2 size={10} className="text-foreground/60" />
+          </div>
+        </div>
+      </div>
+
+      <Settings
+        size={14}
+        className="absolute top-3 right-3 text-muted-foreground/60"
+      />
     </div>
   );
 }
