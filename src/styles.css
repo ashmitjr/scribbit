@@ -6,8 +6,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --breakpoint-xs: 420px;
+
   --font-serif: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
 
   --radius-sm: 6px;
   --radius-md: 8px;
