@@ -11,7 +11,7 @@ export function FeatureThink() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h2 className="font-sans font-semibold text-[30px] sm:text-[38px] md:text-[42px] leading-[1.1] max-w-xs tracking-[-0.025em]">
+          <h2 className="font-sans font-semibold text-[26px] xs:text-[30px] sm:text-[38px] md:text-[42px] leading-[1.08] max-w-xs tracking-[-0.03em]">
             Notes that work the way you think.
           </h2>
           <p className="mt-4 sm:mt-5 text-[14px] sm:text-[15px] text-muted-foreground leading-relaxed max-w-sm">
